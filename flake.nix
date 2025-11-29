@@ -48,6 +48,7 @@
         ./hosts/t480/default.nix
         ./hosts/t480/hardware-configuration.nix
         ./hosts/t480/disk-config-t480.nix
+        ./sops.nix
 
 	sops-nix.nixosModules.sops
         disko.nixosModules.default

@@ -91,30 +91,29 @@
   # #  owner = config.users.users.dilly.name;
   # #};
 
-  sops = {
-    defaultSopsFile = ../../secrets/secrets.yaml;
-    defaultSopsFormat = "yaml";
-    age.keyFile = "/home/dilly/.config/sops/age/keys.txt";
-    age.generateKey = true;
-    secrets = {
-      "openssh/github-t480" = {
-        sopsFile = ../../secrets/secrets.yaml;
-	# owner = "root";
-	# group = "root";
-	# mode = "0400";
-	# neededForUsers = true;
-      };
-      "hostId" = {
-        sopsFile = ../../secrets/secrets.yaml;
-	owner = "root";
-	group = "root";
-	mode = "0400";
-	neededForUsers = true;
-      };
-    };
-  };
+  # sops = {
+  #   defaultSopsFile = ../../secrets/secrets.yaml;
+  #   defaultSopsFormat = "yaml";
+  #   age.keyFile = "/home/dilly/.config/sops/age/keys.txt";
+  #   age.generateKey = true;
+  #   secrets = {
+  #     "openssh/github-t480" = {
+  #       sopsFile = ../../secrets/secrets.yaml;
+  #       # owner = "root";
+  #       # group = "root";
+  #       # mode = "0400";
+  #       # neededForUsers = true;
+  #     };
+  #     "hostId" = {
+  #       sopsFile = ../../secrets/secrets.yaml;
+  #       owner = "root";
+  #       group = "root";
+  #       mode = "0400";
+  #       neededForUsers = true;
+  #     };
+  #   };
+  # };
 
-  #!TODO
   users.users."dilly".openssh.authorizedKeys.keys = [
     #/run/secrets/openssh/github-t480
     #config.sops.secrets."openssh/github-t480".path
