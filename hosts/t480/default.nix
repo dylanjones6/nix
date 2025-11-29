@@ -41,6 +41,9 @@
     # other shit goes here but i hand typed this so idc look at commented out configuration.nix
   };
 
+  # Enable CUPS printing service
+  services.printing.enable = true;
+
   #programs.firefox.enable = true;
 
   #programs.thunderbird.enable = true;
