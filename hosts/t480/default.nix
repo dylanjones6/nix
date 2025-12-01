@@ -97,6 +97,7 @@
     localsend
     nautilus
     zellij
+    alacritty
   ];
 
   # programs.nushell = {
