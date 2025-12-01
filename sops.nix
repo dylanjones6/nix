@@ -7,5 +7,6 @@
     age.generateKey = true;
     secrets."openssh/github-t480" = {};
     secrets."hostId" = {};
+    #secrets."wifi" = {};
   };
 }

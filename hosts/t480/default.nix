@@ -19,6 +19,20 @@
   #networking.hostId = "$(cat /run/secrets/hostId)";
   #networking.hostId = config.sops.secrets."hostId".path;
 
+  #!TODO WORK ON THIS NETWORKMANAGER STUFF!!!!
+  #   networking.networkmanager = {
+  #     # enable = true; # already in configuration.nix
+  #     ensureProfiles = {
+  #       profiles."home" = {
+  #         connection = {
+  # 	  #id = "
+  # 	  type = "wifi";
+  # 	  autoconnect = true;
+  # 	};
+  # 	wifi = {
+  # 	  #mode = "infrastructure";
+  # 	  ssid = 
+
   time.timeZone = "America/Denver";
   
   #!TODO
@@ -28,6 +42,7 @@
 
   programs.fish.enable = true;
 
+  # runs fish by default unless in recovery mode since fish isn't POSIX compliant
   programs.bash = {
     interactiveShellInit = ''
       if [[ $(${pkgs.procps}/bin/ps --no-header --pid=$PPID --format=comm) != "fish" && -z ''${BASH_EXECUTION_STRING} ]]
@@ -38,28 +53,9 @@
     '';
   };
 
+  programs.starship.enable = true;
 
-  # programs.zsh = {
-  #   enable = true; 
-  #   enableCompletion = true;
-  #   autosuggestions.enable = true;
-  #   syntaxHighlighting.enable = true;
-
-  #   shellAliases = {
-
-  #   };
-  #   histSize = 10000;
-  #   ohMyZsh = {
-  #     enable = true;
-  #     plugins = [ "git" ];
-  #   };
-  # };
-
-  # users.defaultUserShell = pkgs.zsh;
-
-  # users.users.dilly = {
-  #   shell = pkgs.zsh;
-  # };
+  programs.neovim.defaultEditor = true;
 
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
