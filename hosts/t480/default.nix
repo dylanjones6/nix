@@ -4,6 +4,7 @@
   imports =
     [
       ./hardware-configuration.nix
+	  ../../networkmanager.nix
       ../../wm/gnome.nix
       #../../wm/hyprland.nix
     ];
@@ -18,20 +19,6 @@
   #!TODO get this working, something to do with it working at build time?
   #networking.hostId = "$(cat /run/secrets/hostId)";
   #networking.hostId = config.sops.secrets."hostId".path;
-
-  #!TODO WORK ON THIS NETWORKMANAGER STUFF!!!!
-  #   networking.networkmanager = {
-  #     # enable = true; # already in configuration.nix
-  #     ensureProfiles = {
-  #       profiles."home" = {
-  #         connection = {
-  # 	  #id = "
-  # 	  type = "wifi";
-  # 	  autoconnect = true;
-  # 	};
-  # 	wifi = {
-  # 	  #mode = "infrastructure";
-  # 	  ssid = 
 
   time.timeZone = "America/Denver";
   
@@ -99,6 +86,8 @@
 	fishPlugins.fzf-fish
 	fzf
   ];
+
+  virtualisation.docker.enable = true;
 
   # programs.nushell = {
   #   enable = true;

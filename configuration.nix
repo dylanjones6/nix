@@ -34,7 +34,7 @@
   users.users.dilly = {
     isNormalUser = true;
     description = "dylan";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
   };
 
   # Allow unfree packages :(

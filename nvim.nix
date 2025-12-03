@@ -1,25 +1,29 @@
 { config, inputs, lib, pkgs, ... }:
 
 
-
-
+let
+  pixel = pkgs.vimUtils.buildVimPlugin {
+    name = "pixel.nvim";
+    src = pkgs.fetchFromGitHub {
+      owner = "bjarneo";
+      repo = "pixel.nvim";
+      rev = "fd06541f7c790e22ad18f0ee5873b246de5b4a87";
+      hash = "sha256-D4o5IkLsW4iq6ceeCHKHCNwxVpEV8fYPbpms+J7ZcJQ=";
+    };
+  };
+in
 {
   programs.neovim = {
     enable = true;
     viAlias = true;
     vimAlias = true;
     plugins = with pkgs.vimPlugins; [
-      nvim-colorizer-lua
-      vim-plug
-      #bjarneo/pixel.nvim
+      #vim-plug
+      lightline-vim
+      pixel
+	  mason-nvim
     ];
     extraConfig = ''
-      " call plug#begin()
-
-      " "Plug 'tpope/vim-sensible'
-      " Plug 'bjarneo/pixel.nvim
-
-      " call plug#end()
 
       syntax on
       set number
@@ -39,7 +43,11 @@
       "set title
       "set spell
 
-      "colorscheme pixel
+      ""set background=dark
+      ""set termguicolors=false
+      colorscheme pixel
+      set background=dark
+      ""set termguicolors=true
       
       "search commands
       set incsearch
@@ -61,6 +69,6 @@
       if has('mouse')
           set mouse=a
       endif
-   '';
+    '';
   };
 }
