@@ -13,12 +13,15 @@
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    
     sops-nix = {
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     disko.url =  "github:nix-community/disko/master";
+    # nixvim = {
+    #   url = "github:nix-community/nixvim";
+    #   inputs.nixpkgs.follows = "nixpkgs-unstable";
+    # };
 
     #TODO maybe put home-manager stuff here from: nixos-and-flakes.thiscute.world/nixos-with-flakes/start-using-home-manager
 
@@ -35,15 +38,27 @@
         ./hosts/t480/disk-config-t480.nix
         ./sops.nix
 
-	sops-nix.nixosModules.sops
+	    sops-nix.nixosModules.sops
         disko.nixosModules.default
+        # nixvim.nixosModules.nixvim
 
         home-manager.nixosModules.home-manager
         {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
+        #   home-manager = {
+	    #     sharedModules = [ nixvim.homeModules.nixvim ];
+	    #     # users.dilly = {
+	    #     #   import ./home.nix
+	    #     #   programs.nixvim = {
+	    #     #     enable = true;
+	    #     #     package = nixpkgs-unstable.nixvim;
+	    #     #   };
+	    #     #   #import ./home.nix
+	    #     # };
+	    #   };
+        home-manager.useGlobalPkgs = true;
+        home-manager.useUserPackages = true;
 
-          home-manager.users.dilly = import ./home.nix;
+        home-manager.users.dilly = import ./home.nix;
         }
       ];
     };
@@ -54,6 +69,7 @@
         ./configuration.nix
         ./hosts/server/default.nix
         ./hosts/server/hardware-configuration.nix
+        ./vim.nix
 
         home-manager.nixosModules.home-manager
         {

@@ -1,9 +1,9 @@
-{ config, pkgs, ... }:
+{ config, pkgs, nixvim, ... }:
 
 {
-  #imports = [
-  #  ./nvim.nix
-  #];
+  imports = [
+    ./nvim.nix
+  ];
   
   home.username = "dilly";
   home.homeDirectory = "/home/dilly";
@@ -17,18 +17,47 @@
     fd
   ];
 
-
-  # programs.nushell = {
+  # programs.vim = {
   #   enable = true;
-  #   shellAliases = {
-  #     nixup = "sudo nixos-rebuild switch";
-  #     connect-vpn = "sudo systemctl start openvpn-homeVPN.service";
-  #     disconnect-vpn = "sudo systemctl stop openvpn-homeVPN.service";
-  #     zj = "zellij";
-  #   };
   #   extraConfig = ''
-  #   $env.config.buffer_editor = "nvim"
-  #   $env.EDITOR = "nvim"
+  #     syntax on
+  #     set number
+  #     "set cursorline
+  #     "set cursorcolumn"
+  #     set tabstop=4
+  #     "set expandtab
+  #     set smartindent
+  #     set relativenumber
+  #     set nowrap
+  #     "set visualbell
+  #     set noerrorbells
+  #     set colorcolumn=80
+  #     set scrolloff=8
+  #     set sidescrolloff=3
+  #     set encoding=utf-8
+  #     "set title
+  #     "set spell
+  #     
+  #     "search commands
+  #     set incsearch
+  #     set ignorecase
+  #     set smartcase
+  #     set showcmd
+  #     set showmode
+  #     set showmatch
+  #     "set hlsearch
+  #     set history=1000
+  #     
+  #     "Enable auto completion menu after pressing TAB.
+  #     set wildmenu
+  #     "Make wildmenu behave like similar to Bash completion.
+  #     set wildmode=list:longest
+  #     " There are certain files that we would never want to edit with Vim. " Wildmenu will ignore files with these extensions.
+  #     set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
+  #     
+  #     if has('mouse')
+  #         set mouse=a
+  #     endif 
   #   '';
   # };
   
@@ -60,12 +89,47 @@
     };
   };
 
-  programs.neovim = {
-    enable = true;
-    plugins = with pkgs.vimPlugins; [
-      lazy-nvim
-    ];
-  };
+  # programs.neovim = {
+  #   enable = true;
+  #   # extraConfig = lib.fileContents /home/dilly/.config/nvim/init.lua;
+  #   viAlias = true;
+  #   vimAlias = true;
+  # };
+  # programs.nixvim = {
+  #   enable = true;
+  #   globals.mapleader = " ";
+
+  #   # colorscheme
+  #   # colorschemes.onedark = {
+  #   #   enable = true;
+  #   #   settings.style = "dark";
+  #   # };
+
+  #   # plugins
+  #   plugins.web-devicons.enable = false;
+  #   plugins.lualine.enable = true;
+  #   plugins.nix.enable = true;
+  #   # plugins.treesitter.enable = true;
+  #   # plugins.telescope.enable = true;
+  #   # plugins.harpoon = {
+  #   #   enable = true;
+  #   #   keymaps.addFile = "<leader>a";
+  #   # };
+  #   plugins.lsp = {
+  #     keymaps = {
+  #       silent = true;
+  #       diagnostic = {
+  #         "<leader>k" = "goto_prev";
+  #         "<leader>j" = "goto_next";
+  #       };
+
+  #       lspBuf = {
+  #         gd = "definition";
+  #         K = "hover";
+  #       };
+  #     };
+  #   };
+  # };
 
   programs.git = {
     enable = true;

@@ -55,7 +55,9 @@
 
   programs.starship.enable = true;
 
-  programs.neovim.defaultEditor = true;
+  # programs.neovim.defaultEditor = true;
+  # environment.variables.EDITOR = "nvim";
+  # programs.neovim.configure = import ./init.lua;
 
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
@@ -94,6 +96,8 @@
     nautilus
     zellij
     alacritty
+    gruvbox-dark-gtk
+    vimPlugins.onedark-nvim
   ];
 
   # programs.nushell = {
