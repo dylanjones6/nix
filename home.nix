@@ -2,8 +2,7 @@
 
 {
   imports = [
-    #./nvim.nix
-    ./vim.nix
+    ./nvim.nix
   ];
   
   home.username = "dilly";

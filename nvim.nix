@@ -21,18 +21,29 @@ in
       #vim-plug
       lightline-vim
       pixel
-	  mason-nvim
+      mason-nvim
     ];
     extraConfig = ''
 
       syntax on
       set number
+      set relativenumber
       "set cursorline
       "set cursorcolumn"
       set tabstop=4
-      "set expandtab
+      set expandtab
+
+     set list
+---- set listchars=tab:»| ,extends:›,precedes:‹,nbsp:·,trail:_
+
+
+      " INDENTING "
       set smartindent
-      set relativenumber
+	  set copyindent
+	  set smarttab
+	  set autoindent
+
+
       set nowrap
       "set visualbell
       set noerrorbells
@@ -43,20 +54,23 @@ in
       "set title
       "set spell
 
-      ""set background=dark
-      ""set termguicolors=false
+
+      " COLORSCHEME "
       colorscheme pixel
       set background=dark
-      ""set termguicolors=true
       
-      "search commands
+
+	  " SEARCHING "
       set incsearch
       set ignorecase
       set smartcase
+      set hlsearch
+      "search commands
+
+
       set showcmd
       set showmode
       set showmatch
-      "set hlsearch
       set history=1000
       
       "Enable auto completion menu after pressing TAB.
