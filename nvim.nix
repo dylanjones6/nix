@@ -34,14 +34,14 @@ in
       set expandtab
 
      set list
----- set listchars=tab:»| ,extends:›,precedes:‹,nbsp:·,trail:_
+     set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·
 
 
       " INDENTING "
       set smartindent
-	  set copyindent
-	  set smarttab
-	  set autoindent
+      set copyindent
+      set smarttab
+      set autoindent
 
 
       set nowrap
@@ -58,9 +58,9 @@ in
       " COLORSCHEME "
       colorscheme pixel
       set background=dark
-      
 
-	  " SEARCHING "
+
+      " SEARCHING "
       set incsearch
       set ignorecase
       set smartcase
@@ -72,14 +72,14 @@ in
       set showmode
       set showmatch
       set history=1000
-      
+
       "Enable auto completion menu after pressing TAB.
       set wildmenu
       "Make wildmenu behave like similar to Bash completion.
       set wildmode=list:longest
       " There are certain files that we would never want to edit with Vim. " Wildmenu will ignore files with these extensions.
       set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
-      
+
       if has('mouse')
           set mouse=a
       endif
