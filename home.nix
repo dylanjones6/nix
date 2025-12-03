@@ -1,8 +1,9 @@
-{ config, pkgs, nixvim, ... }:
+{ config, lib, pkgs, nixvim, ... }:
 
 {
   imports = [
-    ./nvim.nix
+    #./nvim.nix
+    ./vim.nix
   ];
   
   home.username = "dilly";
@@ -130,6 +131,31 @@
   #     };
   #   };
   # };
+
+  programs.kitty = lib.mkForce {
+    enable = true;
+    settings = {
+      confirm_os_window_close = 0;
+	  shell_integration = true;
+	  shell = "fish";
+	  color0 =  "#1c2023";
+	  color1 =  "#c7ae95";
+	  color2 =  "#95c7ae";
+	  color3 =  "#aec795";
+	  color4 =  "#ae95c7";
+	  color5 =  "#c795ae";
+	  color6 =  "#95aec7";
+	  color7 =  "#c7ccd1";
+	  color8 =  "#747c84";
+	  color9 =  "#c7ae95";
+	  color10 = "#95c7ae";
+	  color11 = "#aec795";
+	  color12 = "#ae95c7";
+	  color13 = "#c795ae";
+	  color14 = "#95aec7";
+	  color15 = "#f3f4f5";
+    };
+  };
 
   programs.git = {
     enable = true;

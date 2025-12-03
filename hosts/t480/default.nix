@@ -83,7 +83,6 @@
     firefox
     thunderbird
     #librewolf
-    kitty
     #nerd-fonts.iosevka
     wofi
     waybar
@@ -96,7 +95,6 @@
     localsend
     nautilus
     zellij
-	kitty
     fishPlugins.done
 	fishPlugins.fzf-fish
 	fzf
