@@ -78,6 +78,7 @@
     pkgs.brgenml1cupswrapper
   ];
 
+  # PACKAGES
   environment.systemPackages = with pkgs; [
     firefox
     thunderbird
@@ -95,7 +96,7 @@
     localsend
     nautilus
     zellij
-    alacritty
+	kitty
     fishPlugins.done
 	fishPlugins.fzf-fish
 	fzf
