@@ -21,6 +21,7 @@ in
       #vim-plug
       lightline-vim
       pixel
+	  mason-nvim
     ];
     extraConfig = ''
 

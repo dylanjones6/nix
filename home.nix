@@ -16,51 +16,8 @@
     nnn
     fzf
     fd
+	nerd-fonts.comic-shanns-mono
   ];
-
-  # programs.vim = {
-  #   enable = true;
-  #   extraConfig = ''
-  #     syntax on
-  #     set number
-  #     "set cursorline
-  #     "set cursorcolumn"
-  #     set tabstop=4
-  #     "set expandtab
-  #     set smartindent
-  #     set relativenumber
-  #     set nowrap
-  #     "set visualbell
-  #     set noerrorbells
-  #     set colorcolumn=80
-  #     set scrolloff=8
-  #     set sidescrolloff=3
-  #     set encoding=utf-8
-  #     "set title
-  #     "set spell
-  #     
-  #     "search commands
-  #     set incsearch
-  #     set ignorecase
-  #     set smartcase
-  #     set showcmd
-  #     set showmode
-  #     set showmatch
-  #     "set hlsearch
-  #     set history=1000
-  #     
-  #     "Enable auto completion menu after pressing TAB.
-  #     set wildmenu
-  #     "Make wildmenu behave like similar to Bash completion.
-  #     set wildmode=list:longest
-  #     " There are certain files that we would never want to edit with Vim. " Wildmenu will ignore files with these extensions.
-  #     set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
-  #     
-  #     if has('mouse')
-  #         set mouse=a
-  #     endif 
-  #   '';
-  # };
   
   programs.librewolf = {
     enable = true;
@@ -90,54 +47,16 @@
     };
   };
 
-  # programs.neovim = {
-  #   enable = true;
-  #   # extraConfig = lib.fileContents /home/dilly/.config/nvim/init.lua;
-  #   viAlias = true;
-  #   vimAlias = true;
-  # };
-  # programs.nixvim = {
-  #   enable = true;
-  #   globals.mapleader = " ";
-
-  #   # colorscheme
-  #   # colorschemes.onedark = {
-  #   #   enable = true;
-  #   #   settings.style = "dark";
-  #   # };
-
-  #   # plugins
-  #   plugins.web-devicons.enable = false;
-  #   plugins.lualine.enable = true;
-  #   plugins.nix.enable = true;
-  #   # plugins.treesitter.enable = true;
-  #   # plugins.telescope.enable = true;
-  #   # plugins.harpoon = {
-  #   #   enable = true;
-  #   #   keymaps.addFile = "<leader>a";
-  #   # };
-  #   plugins.lsp = {
-  #     keymaps = {
-  #       silent = true;
-  #       diagnostic = {
-  #         "<leader>k" = "goto_prev";
-  #         "<leader>j" = "goto_next";
-  #       };
-
-  #       lspBuf = {
-  #         gd = "definition";
-  #         K = "hover";
-  #       };
-  #     };
-  #   };
-  # };
-
   programs.kitty = lib.mkForce {
     enable = true;
     settings = {
       confirm_os_window_close = 0;
 	  shell_integration = true;
 	  shell = "fish";
+	  dynamic_background_opacity = true;
+	  enable_audio_bell = false;
+	  font_family = "ComicShannsMono Nerd Font Mono";
+	  font_size = 12;
 	  color0 =  "#1c2023";
 	  color1 =  "#c7ae95";
 	  color2 =  "#95c7ae";
