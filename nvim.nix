@@ -28,7 +28,7 @@ in
       syntax on
       set number
       set relativenumber
-      "set cursorline
+      set cursorline
       "set cursorcolumn"
       set tabstop=4
       set expandtab
@@ -67,6 +67,8 @@ in
       set hlsearch
       "search commands
 
+      " make laggy connections faster
+      set ttyfast
 
       set showcmd
       set showmode
@@ -83,6 +85,12 @@ in
       if has('mouse')
           set mouse=a
       endif
+
+      " remember last cursor position
+      autocmd BufReadPost *
+          \ if line("'\"") > 0 && line("'\"") <= line("$") |
+          \   exe "normal g`\"" |
+          \ endif
     '';
   };
 }
