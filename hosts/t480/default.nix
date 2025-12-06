@@ -83,8 +83,9 @@
     nautilus
     zellij
     fishPlugins.done
-	fishPlugins.fzf-fish
-	fzf
+    fishPlugins.fzf-fish
+    fzf
+    zathura
   ];
 
   virtualisation.docker.enable = true;
