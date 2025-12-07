@@ -98,6 +98,7 @@
   # };
 
   # programs.ssh.startAgent = true;
+  services.openssh.enable = true;
 
   # age.secrets.github-t480= {
   #   file = ../../../secrets/github-t480.age;

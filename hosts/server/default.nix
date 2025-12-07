@@ -5,7 +5,7 @@
     [
       ./hardware-configuration.nix
     ];
-    
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -29,8 +29,14 @@
   environment.systemPackages = with pkgs; [
     hugo
   ];
-  
-  services.openssh.enable = true;
+
+  services.openssh = {
+    enable = true;
+    ports = [ 22 ];
+    settings = {
+      PasswordAuthentication = true; #!TODO CHANGE THIS EVENTUALLY!
+    };
+  };
 
   # Open ports in the firewall.
   networking.firewall.allowedTCPPorts = [ 22 1313 ];

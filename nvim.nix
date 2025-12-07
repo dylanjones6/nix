@@ -29,7 +29,7 @@ in
       set number
       set relativenumber
       set cursorline
-      "set cursorcolumn
+      set cursorcolumn
 
       set list
       set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·

@@ -69,7 +69,7 @@
         ./configuration.nix
         ./hosts/server/default.nix
         ./hosts/server/hardware-configuration.nix
-        ./vim.nix
+        ./hosts/server/disk-config-server.nix
 
         home-manager.nixosModules.home-manager
         {
