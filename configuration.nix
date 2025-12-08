@@ -56,6 +56,7 @@
     psmisc
     sops
     age
+    curl
   ];
 
   services.openssh.enable = true;

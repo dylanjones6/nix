@@ -40,21 +40,9 @@
 
         sops-nix.nixosModules.sops
         disko.nixosModules.default
-        # nixvim.nixosModules.nixvim
 
         home-manager.nixosModules.home-manager
         {
-        #   home-manager = {
-        #     sharedModules = [ nixvim.homeModules.nixvim ];
-        #     # users.dilly = {
-        #     #   import ./home.nix
-        #     #   programs.nixvim = {
-        #     #     enable = true;
-        #     #     package = nixpkgs-unstable.nixvim;
-        #     #   };
-        #     #   #import ./home.nix
-        #     # };
-        #   };
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
 
@@ -70,6 +58,10 @@
         ./hosts/server/default.nix
         ./hosts/server/hardware-configuration.nix
         ./hosts/server/disk-config-server.nix
+        ./sops.nix
+
+        sops-nix.nixosModules.sops
+        disko.nixosModules.default
 
         home-manager.nixosModules.home-manager
         {

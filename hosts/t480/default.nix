@@ -23,9 +23,9 @@
   time.timeZone = "America/Denver";
   
   #!TODO
-  # services.openvpn.servers = {
-  #   homeVPN = { config = '' config /root/nixos/openvpn/homeVPN.conf ''; };
-  # };
+  services.openvpn.servers = {
+    homeVPN = { config = '' config /home/dilly/Downloads/homeVPN.conf ''; };
+  };
 
   programs.fish.enable = true;
 

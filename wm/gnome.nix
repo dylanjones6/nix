@@ -8,6 +8,12 @@
   services.displayManager.gdm.enable = true;
   services.desktopManager.gnome.enable = true;
 
+  networking.networkmanager = {
+    plugins = with pkgs; [
+      networkmanager-openvpn
+    ];
+  };
+
   #programs.gnome3.gnome-tweaks = enable;
   #environment.systemPackages.pkgs.gnome-tweaks = true;
   ##pkgs.programs.gnome-tweaks.enable = true;
