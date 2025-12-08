@@ -38,23 +38,23 @@
         ./hosts/t480/disk-config-t480.nix
         ./sops.nix
 
-	    sops-nix.nixosModules.sops
+        sops-nix.nixosModules.sops
         disko.nixosModules.default
         # nixvim.nixosModules.nixvim
 
         home-manager.nixosModules.home-manager
         {
         #   home-manager = {
-	    #     sharedModules = [ nixvim.homeModules.nixvim ];
-	    #     # users.dilly = {
-	    #     #   import ./home.nix
-	    #     #   programs.nixvim = {
-	    #     #     enable = true;
-	    #     #     package = nixpkgs-unstable.nixvim;
-	    #     #   };
-	    #     #   #import ./home.nix
-	    #     # };
-	    #   };
+        #     sharedModules = [ nixvim.homeModules.nixvim ];
+        #     # users.dilly = {
+        #     #   import ./home.nix
+        #     #   programs.nixvim = {
+        #     #     enable = true;
+        #     #     package = nixpkgs-unstable.nixvim;
+        #     #   };
+        #     #   #import ./home.nix
+        #     # };
+        #   };
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
 
