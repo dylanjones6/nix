@@ -86,6 +86,7 @@
     fishPlugins.fzf-fish
     fzf
     zathura
+    gcc
   ];
 
   virtualisation.docker.enable = true;
