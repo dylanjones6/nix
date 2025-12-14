@@ -14,5 +14,6 @@ in
     secrets."hostId" = {};
     secrets."wifi/home/ssid" = {};
     secrets."wifi/home/psk" = {};
+    secrets."openssh/github" = {};
   };
 }
