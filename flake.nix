@@ -78,6 +78,7 @@
       modules = [
         ./darwin-configuration.nix
         ./hosts/mbp/default.nix
+        ./homebrew.nix
         # ./hosts/server/hardware-configuration.nix
         # ./hosts/server/disk-config-server.nix
         # ./sops.nix
