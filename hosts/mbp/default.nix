@@ -66,8 +66,8 @@
   system.keyboard.enableKeyMapping = true;
   system.keyboard.remapCapsLockToEscape = true;
 
-  system.defaults.NSGlobalDomain.InitialKeyRepeat = 100;
-  system.defaults.NSGlobalDomain.KeyRepeat = 100;
+  system.defaults.NSGlobalDomain.InitialKeyRepeat = 20;
+  system.defaults.NSGlobalDomain.KeyRepeat = 20;
 
   # virtualisation.docker.enable = true;
 
