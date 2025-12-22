@@ -70,7 +70,7 @@
     settings = {
       confirm_os_window_close = 0;
 	  shell_integration = true;
-	  shell = "fish";
+	  #shell = "fish";
 	  dynamic_background_opacity = true;
 	  enable_audio_bell = false;
 	  font_family = "ComicShannsMono Nerd Font Mono";

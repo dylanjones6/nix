@@ -19,10 +19,9 @@
   # runs fish by default unless in recovery mode since fish isn't POSIX compliant
   programs.zsh = {
     interactiveShellInit = ''
-      if [[ $(${pkgs.procps}/bin/ps --no-header --pid=$PPID --format=comm) != "fish" && -z ''${BASH_EXECUTION_STRING} ]]
+      if [[ $(ps -o command= -p "$PPID" | awk '{print $1}') != 'fish' ]]
       then
-        shopt -q login_shell && LOGIN_OPTION='--login' || LOGIN_OPTION=""
-        exec ${pkgs.fish}/bin/fish $LOGIN_OPTION
+          exec fish -l
       fi
     '';
   };
