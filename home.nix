@@ -74,7 +74,7 @@
 	  dynamic_background_opacity = true;
 	  enable_audio_bell = false;
 	  font_family = "ComicShannsMono Nerd Font Mono";
-	  font_size = 12;
+      font_size = if pkgs.stdenv.hostPlatform.isDarwin then 14 else 12;
 	  color0 =  "#1c2023";
 	  color1 =  "#c7ae95";
 	  color2 =  "#95c7ae";
