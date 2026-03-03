@@ -28,8 +28,11 @@
     ];
 
     casks = [
-      "docker"
+      "amethyst"
+      "docker-desktop"
       "unnaturalscrollwheels"
+      "xquartz"
+      #"gnucash"
     ];
   };
 }

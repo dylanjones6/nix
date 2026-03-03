@@ -22,6 +22,7 @@ in
       lightline-vim
       pixel
       mason-nvim
+      nvim-treesitter.withAllGrammars
     ];
     extraConfig = ''
 

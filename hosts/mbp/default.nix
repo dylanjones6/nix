@@ -55,6 +55,7 @@
     fzf
     zathura
     gcc
+    texlive.combined.scheme-full
     #docker
     #xquartz #broken?
     #darwin.xcode
