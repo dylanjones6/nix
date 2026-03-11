@@ -27,20 +27,21 @@
     homeVPN = { config = '' config /home/dilly/Downloads/homeVPN.conf ''; };
   };
 
-  programs.fish.enable = true;
+  # programs.fish.enable = true;
 
-  # runs fish by default unless in recovery mode since fish isn't POSIX compliant
-  programs.bash = {
-    interactiveShellInit = ''
-      if [[ $(${pkgs.procps}/bin/ps --no-header --pid=$PPID --format=comm) != "fish" && -z ''${BASH_EXECUTION_STRING} ]]
-      then
-        shopt -q login_shell && LOGIN_OPTION='--login' || LOGIN_OPTION=""
-        exec ${pkgs.fish}/bin/fish $LOGIN_OPTION
-      fi
-    '';
-  };
+  # # runs fish by default unless in recovery mode since fish isn't POSIX compliant
+  # programs.bash = {
+  #   interactiveShellInit = ''
+  #     if [[ $(${pkgs.procps}/bin/ps --no-header --pid=$PPID --format=comm) != "fish" && -z ''${BASH_EXECUTION_STRING} ]]
+  #     then
+  #       shopt -q login_shell && LOGIN_OPTION='--login' || LOGIN_OPTION=""
+  #       exec ${pkgs.fish}/bin/fish $LOGIN_OPTION
+  #     fi
+  #     direnv hook fish | source
+  #   '';
+  # };
 
-  programs.starship.enable = true;
+  # programs.starship.enable = true;
 
   programs.neovim.defaultEditor = true;
   environment.variables.EDITOR = "nvim";

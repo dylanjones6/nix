@@ -61,12 +61,12 @@
 
   services.openssh.enable = true;
 
-  environment.shellAliases = {
-    #"nixup" = "sudo nixos-rebuild switch && git -C $HOME/.config/nixos add . && git -C $HOME/.config/nixos commit  && git -C $HOME/.config/nixos push origin main";
-    "nixup" = "sudo nixos-rebuild switch";
-    "connect-vpn" = "sudo systemctl start openvpn-homeVPN.service";
-    "disconnect-vpn" = "sudo systemctl stop openvpn-homeVPN.service";
-  };
+  # environment.shellAliases = {
+  #   #"nixup" = "sudo nixos-rebuild switch && git -C $HOME/.config/nixos add . && git -C $HOME/.config/nixos commit  && git -C $HOME/.config/nixos push origin main";
+  #   "nixup" = "sudo nixos-rebuild switch";
+  #   "connect-vpn" = "sudo systemctl start openvpn-homeVPN.service";
+  #   "disconnect-vpn" = "sudo systemctl stop openvpn-homeVPN.service";
+  # };
 
   # Enable the uinput module
   boot.kernelModules = [ "uinput" ];

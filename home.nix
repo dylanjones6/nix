@@ -68,7 +68,7 @@
     settings = {
       confirm_os_window_close = 0;
 	  shell_integration = true;
-	  shell = "fish";
+	  # shell = "fish";
 	  dynamic_background_opacity = true;
 	  enable_audio_bell = false;
 	  font_family = "ComicShannsMono Nerd Font Mono";
@@ -98,6 +98,45 @@
     settings.user.email = "dylanjones6@protonmail.com";
     settings.init.defaultBranch = "main";
   };
+
+  programs.direnv = {
+    enable = true;
+    enableBashIntegration = true;
+    nix-direnv.enable = true;
+  };
+
+  programs.bash = {
+    enable = true;
+    shellAliases = {
+      "nixup" = "sudo nixos-rebuild switch";
+      # "setup_proj" = ''
+      #                  if [ ! -f ./shell.nix ]; then
+      #                    echo "stuff!";
+      #                    cat > shell.nix <<EOL;
+      #                    # shell.nix
+      #                    { pkgs ? import <nixpkgs> {}}:
+      #                    
+      #                    pkgs.mkShell {
+      #                      packages = [ pkgs.hello ];
+      #                    }
+      #                    EOL
+      #                  fi
+      #                  echo "use nix" >> .envrc
+      #                  direnv allow
+      #                  git init
+      #                '';
+      # "test" = ''
+      #            if [ ! -f ./shell.nix ]; then
+      #              echo "something";
+      #            fi
+      #          '';
+    };
+    bashrcExtra = ''
+      eval \"$(starship init bash)\"
+    '';
+  };
+
+  programs.starship.enable = true;
   
   home.stateVersion = "25.05";
 }
