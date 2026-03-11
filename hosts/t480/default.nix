@@ -41,7 +41,18 @@
   #   '';
   # };
 
-  # programs.starship.enable = true;
+  xdg.mimeApps = {
+    enable = true;
+    defaultApplications = {
+      "text/html" = "librewolf";
+      "x-scheme-handler/http" = "librewolf";
+      "x-scheme-handler/https" = "librewolf";
+      "x-scheme-handler/about" = "librewolf";
+      "x-scheme-handler/unknown" = "librewolf";
+    };
+  };
+
+  programs.starship.enable = true;
 
   programs.neovim.defaultEditor = true;
   environment.variables.EDITOR = "nvim";
