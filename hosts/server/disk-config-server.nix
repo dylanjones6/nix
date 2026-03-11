@@ -28,6 +28,8 @@
               };
             };
           };
+        };
+      };
       hdd0 = {
         type = "disk";
         device = "/dev/sda";
@@ -60,6 +62,7 @@
           };
         };
       };
+    };
     zpool = {
       zroot = {
         type = "zpool";
@@ -107,6 +110,7 @@
             };
           };
         };
+      };
       pool0 = {
         mountpoint = "none";
         type = "zpool";
